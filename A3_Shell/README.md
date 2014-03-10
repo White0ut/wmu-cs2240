@@ -32,9 +32,3 @@ You do not need a header file in this assignment, although you certainly may pro
 
 **Redirection:** You should be able to handle the two basic types of redirection: `>` should redirect a process' stdout to a file, `<` should redirect a file to a process' stdin. 
 
-**(Bonus) Globbing:** Your shell should be able to handle basic globbing with the * operator. This is optional, but it would be really cool! 
-
-### Due: February 18th, 2014
-
-## The Grade
-As usual, your assignment will be compiled and run through an automated test suite. Ensure that you don't mangle the prototype of the `shell()` function. 
