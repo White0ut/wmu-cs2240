@@ -36,7 +36,7 @@ typedef struct _map {
 
 The map itself will be passed as the first parameter to each of its functions. This is a pattern that allows programmers to closely mimic object-oriented design patterns in C and is generally considered good practice for functions which operate on a particular data structure. 
 
-### Part 1 (due on 1/16/14)
+### Part 1
 
 ```c
 void map_init(map_t* self);
@@ -89,7 +89,7 @@ printf("%s\n", map_get(cool_map, "rofl"));
 map_destroy(cool_map);
 ```
 
-### Part 2 (due on 1/21/14)
+### Part 2
 
 For part two, you will be required to implement serialization and deserialization functions for your data structure. These will read/write the keys and values stored in your dictionary in a super special proprietary format: 
 
@@ -110,6 +110,3 @@ int map_deserialize(map_t* self, FILE* stream);
 ```
 Reads key value pairs in the K:V format above from the provided file stream and adds them all to map object. 
 
-## The Grade
-
-Your assignment will be compiled and run through an automated test suite. For this reason, it is *IMPERATIVE* that you stick to the guidelines and naming conventions. If you do not, your code will not interact properly with the tests and you will be injustly rewarded with a bad grade. 
