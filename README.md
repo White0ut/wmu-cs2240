@@ -1,8 +1,8 @@
 #WMU-CS2240
 ==========
 
-## TODO: 
-- Sort the todo list base on priority
-- Enable notifications based on due dates / possibly incorporate alarms
-- Aim to remove the footer view, place it an action bar, or menu button
-- Implement Widgets for easy manipulation
+
+##What it is
+
+- This repo is meant to display a little bit of some coursework I am busy working on while I am at Western Michigan
+- Most projects, if not all, are written in C and meant to display knowledge of the language and Linux
