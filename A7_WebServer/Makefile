@@ -1,10 +1,7 @@
-all: server client
+all: server 
 
-server: server.c map.c
+server: server.c map.c server.h
 	gcc server.c map.c -o server
 
-client: client.c
-	gcc client.c -o client
-
-clean: server client
-	rm server client
+clean: server
+	rm server 

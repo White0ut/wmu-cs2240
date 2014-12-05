@@ -1,0 +1,17 @@
+﻿Kendrick Cline
+CS 2230
+17 April 2014
+
+Asignment 7
+
+	In this series of words I will be performing an overview of a simple server written in pure C and talking about it's performance as well as mentioning things that could be done to it.  This program has 3 functions that handle the primary functionality.  main(), handle_request(), and handle_get().  
+
+	The main initializes the socket and accepts requests, once accepted it forks and passes the FD to handle_request().  Handle request simply determines if it is a GET request and passes it as well as a map with the header data to hand_get().  Otherwise, a 500 error is thrown, the map is destroyed and the request is closed.  handle_get() simply retrieves the URL from the map.  Once that is done, if the file is root "/", it opens and returns "index.html".  Otherwise is opens the given directory and attempts to serve it back to the client.  NOTE that sscanf() which was used to read in the URL takes care of LFI.
+
+	The server currently doesn't do any redirection by itself.  Since the server only handles GET requests and reads no header data the current design is appropriate.  With that in mind the Map use is no longer necessary, however once more than just GET requests are designed then the map will be heavily used. If I were just worrying about the server performing quickly on pure get requests, I would remove the map and simply pass the URL in a string.
+
+Performance:
+
+When analyzing performance of my server I began by writing a python script that repetitively pinged the server using the urllib2 library and recorded the time of each.  I also used a tool by apache2 called ApacheBench which was reccomended.
+
+The ApacheBench showed a mean of 0.418 ms per request, once I changed the file to one much larger, the request time increased to .421 however there is no significant increase. Regarding my python script I was able to pull out interesting information.  During the test runs there were consistent lag spikes in the latter half of 5000 test runs.  This hints that my signal handling might not be done correctly.  
